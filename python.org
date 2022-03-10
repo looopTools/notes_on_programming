@@ -1,0 +1,30 @@
+#+TITLE: Notes on Programming in Python
+#+AUTHOR: Lars Nielsen
+
+*Disclaimer:* These are my notes and reflect my views on the programming language or frameworks and might be different from yours.  
+
+* Python
+ 
+** Function Decoration
+
+* Web - Django
+
+  I would honestly recommend anyone coding python to not use Django and instead swap to using Ruby On Rails (RoR).
+  I find it highly non intuitive to use compared to RoR.
+  That being said it is a powerful web framework 
+  
+** Views
+
+   There exists to types of views /function/ and /class/ based views.
+   From a beginners perspective function based views are more simple to use compared to class based views.
+   However, for long term use class based views can give a significantly better organisation and easier overview compared to function based views.  
+
+*** Function Based Views
+
+*** Class Based Views
+    
+  This blog post https://www.dennisivy.com/post/django-class-based-views/ is a great resource for understanding class based views and how they are different from function based views.
+  
+* Web - FastAPI
+
+* Web - Flask
