@@ -1,0 +1,47 @@
+#+TITLE: Notes on Programming in C++
+#+AUTHOR: Lars Nielsen
+
+*Disclaimer:* These are my notes and reflect my views on the programming language or frameworks and might be different from yours.
+
+* C++
+
+** Update your knowledge
+
+   An issue with C++ developers is that we seem to be stuck in the past and keep using last decades technologies.
+   As an example the usage of /for-each/ loops to iterate collections is not commonly taught it intro to C++ classes and that is literally stupid
+
+** C++20
+
+*** Printing any list/vector collection
+
+    How to print a collection as /{elm1, elm2,...,elmN}/ without using an /if/ to check if we are at the last element
+    
+#+BEGIN_SRC C++
+  void print_col(const auto& col)
+  {
+    std::string out_str = "["; 
+    auto it = col.begin();
+    for (; it < col.end() - 1; ++it)
+    {
+      out_str = std::format("{}{}, ", out_str, (*it)); 
+    }
+    out_str = std::format("{}{}]", out_str, (*it));
+    std::puts(out_str); 
+  }
+#+END_SRC
+
+   If you want to achieve this with a /for-each-loop/ (easer to read)
+
+#+BEGIN_SRC c++
+  void print_col(const auto& col)
+  {
+    std::string out_str = "";
+    for (const auto& elm : col)
+    {
+      out_str = std::format("{}{}, ", out_str, elm); 
+    }
+    out_str = std::string(out_str.begin(), out_str.end() - 2);
+    out_str = std::format("[{}]", out_str);
+    std::puts(out_str); 
+  }
+#+END_SRC
